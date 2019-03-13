@@ -7,7 +7,7 @@ public class HzjComplexTest extends TestCase {
     HzjComplex c3 = new HzjComplex(2.0,0.0);
 
         public void testComplexAdd() {
-            assertEquals("3.0+4.0i", c1.ComplexAdd(c3).toString());
+            assertEquals("3.0+4.0i", c1.ComplexAdd(c2).toString());
             assertEquals("3.0+2.0i", c1.ComplexAdd(c3).toString());
             assertEquals("4.0+2.0i", c2.ComplexAdd(c3).toString());
         }
@@ -18,7 +18,6 @@ public class HzjComplexTest extends TestCase {
             assertEquals("-1.0+2.0i", c1.ComplexSub(c3).toString());
             assertEquals("0.0+2.0i", c2.ComplexSub(c3).toString());
         }
-
 
         public void testComplexMulti() {
             assertEquals("-2.0+6.0i", c1.ComplexMulti(c2).toString());

@@ -11,28 +11,28 @@ public class HzjComplex {
     }
 
     HzjComplex ComplexAdd(HzjComplex a){
-        HzjComplex b = new HzjComplex();
+        HzjComplex b = new HzjComplex(0,0);
         b.RealPart = a.RealPart + this.RealPart;
         b.ImagePart = a.ImagePart + this.ImagePart;
         return b;
     }
 
     HzjComplex ComplexSub(HzjComplex a){
-        HzjComplex b = new HzjComplex();
-        b.RealPart = a.RealPart - this.RealPart;
-        b.ImagePart = a.ImagePart - this.ImagePart;
+        HzjComplex b = new HzjComplex(0,0);
+        b.RealPart = this.RealPart - a.RealPart;
+        b.ImagePart = this.ImagePart - a.ImagePart;
         return b;
     }
 
     HzjComplex ComplexMulti(HzjComplex a){
-        HzjComplex b = new HzjComplex();
+        HzjComplex b = new HzjComplex(0,0);
         b.RealPart = this.RealPart * a.RealPart - this.ImagePart * a.ImagePart;
         b.ImagePart = this.ImagePart * a.RealPart + this.RealPart * a.ImagePart;
         return b;
     }
 
     HzjComplex ComplexDiv(HzjComplex a){
-        HzjComplex b = new HzjComplex();
+        HzjComplex b = new HzjComplex(0,0);
         b.RealPart = (this.RealPart * a.ImagePart + this.ImagePart * a.RealPart) / (a.ImagePart * a.ImagePart + a.RealPart * a.RealPart);
         b.ImagePart = (this.ImagePart * a.ImagePart + this.RealPart * a.RealPart) / (a.ImagePart * a.ImagePart + a.RealPart * a.RealPart);
         return b;
@@ -49,7 +49,7 @@ public class HzjComplex {
         return str;
     }
 
-    public boolean equals(Object obj){//重写equals方法
+    public boolean equals(Object obj){
         if (this == obj)
             return true;
         if(obj==null)
